@@ -1038,7 +1038,7 @@ class SIMCONNECT_RECV_ENUMERATE_SIMOBJECT_AND_LIVERY_LIST(SIMCONNECT_RECV_LIST_T
 class SIMCONNECT_RECV_FLOW_EVENT(SIMCONNECT_RECV):
     _pack_ = 1
     _fields_ = [
-        ("FlowEvent", SIMCONNECT_FLOW_EVENT),
+        ("FlowEvent", DWORD),
         ("FltPath", c_char * 256),
     ]
 
