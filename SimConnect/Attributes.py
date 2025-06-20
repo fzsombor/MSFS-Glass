@@ -15,6 +15,7 @@ class SimConnectDll(object):
         self.INPUT_GROUP_ID = SIMCONNECT_INPUT_GROUP_ID
         self.CLIENT_DATA_ID = SIMCONNECT_CLIENT_DATA_ID
         self.CLIENT_DATA_DEFINITION_ID = SIMCONNECT_CLIENT_DATA_DEFINITION_ID
+        self.FACILITY_LIST_TYPE = SIMCONNECT_FACILITY_LIST_TYPE
 
         self.SimConnect = windll.LoadLibrary(library_path)
         # SIMCONNECTAPI SimConnect_Open(
@@ -1328,4 +1329,34 @@ class SimConnectDll(object):
             HANDLE,
             self.DATA_REQUEST_ID,
             SIMCONNECT_SIMOBJECT_TYPE,
+        ]
+
+        # SIMCONNECTAPI SimConnect_SubscribeToFlowEvent(
+        #   HANDLE hSimConnect);
+        self.SubscribeToFlowEvent = self.SimConnect.SimConnect_SubscribeToFlowEvent
+        self.SubscribeToFlowEvent.restype = HRESULT
+        self.SubscribeToFlowEvent.argtypes = [
+            HANDLE
+        ]
+
+        # SIMCONNECTAPI SimConnect_UnsubscribeToFlowEvent(
+        #   HANDLE hSimConnect);
+        self.UnsubscribeToFlowEvent = self.SimConnect.SimConnect_UnsubscribeToFlowEvent
+        self.UnsubscribeToFlowEvent.restype = HRESULT
+        self.UnsubscribeToFlowEvent.argtypes = [
+            HANDLE
+        ]
+
+        # SIMCONNECTAPI SimConnect_RequestAllFacilities(
+        #   HANDLE hSimConnect,
+        #   SIMCONNECT_FACILITY_LIST_TYPE type,
+        #   SIMCONNECT_DATA_REQUEST_ID RequestID);
+
+        self.RequestAllFacilities = self.SimConnect.SimConnect_RequestAllFacilities
+        self.RequestAllFacilities.restype = HRESULT
+        self.RequestAllFacilities.argtypes = [
+            HANDLE,
+            self.FACILITY_LIST_TYPE,
+            self.DATA_REQUEST_ID,
+
         ]
