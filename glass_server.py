@@ -18,8 +18,15 @@ import socket
 import datetime
 import os
 
+# Determine the directory of the script or the .exe
+if getattr(sys, 'frozen', False):  # we are running in a bundle with PyInstaller
+    base_path = os.path.dirname(sys.executable)
+else:  # we are running in a normal Python environment
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
 config = configparser.ConfigParser()
-config_file = "config.ini"
+# Construct the absolute path to the config file
+config_file = os.path.join(base_path, 'config.ini')
 config.read(config_file)
 if 'CONFIG' not in config:
     raise OSError('config.ini is missing or invalid')
