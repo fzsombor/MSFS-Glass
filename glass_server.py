@@ -243,7 +243,7 @@ def flask_thread_func(threadname):
     def trigger_event(event_name, value_to_use=None, event_type=None):
         # This function actually does the work of triggering the event
         LOG.debug(f"Triggering event: {event_name}: {value_to_use} {event_type}")
-        if event_type == '' or event_type == "aircraft":
+        if event_type is None or event_type == '' or event_type == "aircraft":
             if event_name in EventSet.valid_events:
                 event = sm.map_to_sim_event(event_name)
                 if value_to_use is None:
@@ -263,24 +263,12 @@ def flask_thread_func(threadname):
                         for figure, digit in enumerate(reversed(freq_hz)):
                             freq_hz_bcd += int(digit) * (16 ** (figure))
                         sm.send_event(event, DWORD(int(freq_hz_bcd)))
-                    elif event_name == "COM_RADIO_SET" or event_name == "COM2_RADIO_SET":
-                        freq_hz = float(value_to_use) * 100
-                        flag_3dec = int(freq_hz) != freq_hz
-                        freq_hz = str(int(freq_hz))
-                        freq_hz_bcd = 0
-                        for figure, digit in enumerate(reversed(freq_hz)):
-                            freq_hz_bcd += int(digit) * (16 ** (figure))
-                        sm.send_event(event, DWORD(int(freq_hz_bcd)))
-                        # Workaround for 3rd decimal
-                        if flag_3dec is True and str(value_to_use)[-2:] != "25" and str(value_to_use)[-2:] != "75":
-                            if event_name == "COM_RADIO_SET":
-                                trigger_event("COM_STBY_RADIO_SWAP")
-                                trigger_event("COM_RADIO_FRACT_INC")
-                                trigger_event("COM_STBY_RADIO_SWAP")
-                            else:
-                                trigger_event("COM2_RADIO_SWAP")
-                                trigger_event("COM2_RADIO_FRACT_INC")
-                                trigger_event("COM2_RADIO_SWAP")
+                    elif (event_name == "COM_RADIO_SET"):
+                        freq_hz = float(value_to_use) * 1000 * 1000
+                        trigger_event("COM_RADIO_SET_HZ", int(freq_hz))
+                    elif (event_name == "COM2_RADIO_SET"):
+                        freq_hz = float(value_to_use) * 1000 * 1000
+                        trigger_event("COM2_RADIO_SET_HZ", int(freq_hz))
                     elif event_name == "XPNDR_SET":
                         freq_hz = int(value_to_use) * 1
                         freq_hz = str(int(freq_hz))
