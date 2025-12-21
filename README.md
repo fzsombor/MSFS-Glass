@@ -47,6 +47,7 @@ MSFS Glass has built-in support for the following aircraft:
 - Credit where credit is due:
    - [https://github.com/mracko/MSFS-Mobile-Companion-App](https://github.com/mracko/MSFS-Mobile-Companion-App/)
    - [https://github.com/odwdinc/Python-SimConnect](https://github.com/odwdinc/Python-SimConnect)
+   - [https://github.com/hankhank10/MSFS2020-cockpit-companion](https://github.com/hankhank10/MSFS2020-cockpit-companion)
 - Created a new repo due to abandoning the original repos
 - Updated DLL and header definitions to the SDK of MSFS2024
 - **Rebranding MSFS 2020 Mobile Companion App to MSFS Glass**
@@ -119,7 +120,7 @@ You can help in the troubleshooting by enabling `debug` level logging in the app
 - Xbox support is not possible due to the lack of SimConnect SDK in the Xbox release
 
 ## Credits
-MSFS Glass is based on the [MFSS Mobile Companion App](https://github.com/mracko/MSFS-Mobile-Companion-App) that is a fork of [Python-SimConnect](https://pypi.org/project/SimConnect/) project.
+MSFS Glass is based on the [MFSS Mobile Companion App](https://github.com/mracko/MSFS-Mobile-Companion-App) that is a fork of [Python-SimConnect](https://pypi.org/project/SimConnect/) project. The original Flask webapp implementation done by the [MSFS-2020 Cockpit Companion](https://github.com/hankhank10/MSFS2020-cockpit-companion).
 
 
 ## Donation
