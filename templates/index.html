@@ -245,6 +245,37 @@
 
     let followPlane = 1;
 
+    function setFollowPlaneMode(mode) {
+        followPlane = mode;
+        const button = document.getElementById('follow-plane');
+        if (!button) {
+            return;
+        }
+        button.classList.remove('maplibregl-ctrl-follow-plane', 'maplibregl-ctrl-center-plane', 'maplibregl-ctrl-unfollow-plane');
+        if (mode === 1) {
+            button.classList.add('maplibregl-ctrl-follow-plane');
+            button.title = 'Follow Plane on Map';
+        } else if (mode === 2) {
+            button.classList.add('maplibregl-ctrl-center-plane');
+            button.title = 'Center Plane on Map';
+        } else if (mode === 3) {
+            button.classList.add('maplibregl-ctrl-unfollow-plane');
+            button.title = 'Unfollow Plane';
+        }
+    }
+
+    function wireCompassReset() {
+        const compassButton = map.getContainer().querySelector('.maplibregl-ctrl-compass');
+        if (!compassButton) {
+            return;
+        }
+        compassButton.addEventListener('click', () => {
+            if (followPlane === 1) {
+                setFollowPlaneMode(2);
+            }
+        });
+    }
+
     async function initializeMap(map) {
         // Terrain and hillshading
         map.addSource("terrain", {
@@ -421,9 +452,7 @@
 
     map.on('dragstart', () => {
         if (followPlane !== 3) {
-            followPlane = 3;
-            const button = document.getElementById("follow-plane");
-            button.className = 'maplibregl-ctrl-unfollow-plane';
+            setFollowPlaneMode(3);
         }
     });
 
@@ -482,6 +511,8 @@
             "exaggeration": 1
         }), 'top-left')
 
+    wireCompassReset();
+
     class AviationLayerButton {
         onAdd(map) {
             this._map = map;
@@ -525,23 +556,13 @@
                 <span class="maplibregl-ctrl-icon"></span>
             </button>`;
 
-            const button = this._container.querySelector('button');
             this._container.addEventListener('click', () => {
                 if (followPlane === 1) {
-                    followPlane = 2;
-                    button.classList.add('maplibregl-ctrl-center-plane');
-                    button.classList.remove('maplibregl-ctrl-follow-plane');
-                    button.title = 'Center Plane on Map';
+                    setFollowPlaneMode(2);
                 } else if (followPlane === 2) {
-                    followPlane = 3;
-                    button.classList.add('maplibregl-ctrl-unfollow-plane');
-                    button.classList.remove('maplibregl-ctrl-center-plane');
-                    button.title = 'Unfollow Plane';
+                    setFollowPlaneMode(3);
                 } else if (followPlane === 3) {
-                    followPlane = 1;
-                    button.classList.add('maplibregl-ctrl-follow-plane');
-                    button.classList.remove('maplibregl-ctrl-unfollow-plane');
-                    button.title = 'Follow Plane on Map';
+                    setFollowPlaneMode(1);
                 }
 
 
