@@ -6,6 +6,7 @@ MSFS Glass is a tool that allows you to control essential aircraft instruments s
 ### MSFS Glass features
 
 - Track your plane on an interactive moving map
+- Follow your next GPS waypoint, or flight-plan
 - UIs tailored for specific planes:
   - NAV 1/2 frequency and OBS 1/2 selection
   - ADF frequency and ADF card selection

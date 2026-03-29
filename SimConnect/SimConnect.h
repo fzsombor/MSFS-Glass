@@ -128,7 +128,7 @@ SIMCONNECT_ENUM SIMCONNECT_RECV_ID
 };
 
 // Data data types
-SIMCONNECT_ENUM SIMCONNECT_DATATYPE
+SIMCONNECT_ENUM SIMCONNECT_DATATYPE:int
 {
     SIMCONNECT_DATATYPE_INVALID,        // invalid data type
     SIMCONNECT_DATATYPE_INT32,          // 32-bit integer number
@@ -826,7 +826,7 @@ SIMCONNECT_REFSTRUCT SIMCONNECT_RECV_ACTION_CALLBACK : public SIMCONNECT_RECV //
 SIMCONNECT_REFSTRUCT SIMCONNECT_INPUT_EVENT_DESCRIPTOR
 {
     SIMCONNECT_STRING(Name, 64);     // Input event name
-    unsigned __int64	Hash;        // Hash
+	UINT64  Hash;                   // Hash 
     SIMCONNECT_INPUT_EVENT_TYPE	eType;
 };
 
@@ -903,13 +903,15 @@ SIMCONNECT_REFSTRUCT SIMCONNECT_RECV_FLOW_EVENT : public SIMCONNECT_RECV
 //        End of Struct definitions
 //----------------------------------------------------------------------------
 
-
 #if !defined(SIMCONNECTAPI)
-#define SIMCONNECTAPI extern "C" HRESULT __stdcall
+#define SIMCONNECTAPI extern "C" HRESULT
 #endif
 
-
-typedef void (CALLBACK *DispatchProc)(SIMCONNECT_RECV* pData, DWORD cbData, void* pContext);
+#ifdef _USE_WEBASSEMBLY_WASM_RT
+typedef void (CALLBACK *DispatchProc)(void* wasmInstance, SIMCONNECT_RECV* pData, DWORD cbData, void* pContext);
+#else
+typedef void (CALLBACK* DispatchProc)(SIMCONNECT_RECV* pData, DWORD cbData, void* pContext);
+#endif // _USE_WEBASSEMBLY_WASM_RT
 
 SIMCONNECTAPI SimConnect_MapClientEventToSimEvent(HANDLE hSimConnect, SIMCONNECT_CLIENT_EVENT_ID EventID, const char * EventName = "");
 SIMCONNECTAPI SimConnect_TransmitClientEvent(HANDLE hSimConnect, SIMCONNECT_OBJECT_ID ObjectID, SIMCONNECT_CLIENT_EVENT_ID EventID, DWORD dwData, SIMCONNECT_NOTIFICATION_GROUP_ID GroupID, SIMCONNECT_EVENT_FLAG Flags);

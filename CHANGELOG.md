@@ -1,5 +1,21 @@
 # Change Log
 
+**Update 12/22/2025 Version 2.2.0 Changelog:**
+- Bumping SDK version to 1.5.7 (SU4)
+- Fixing North rotation bug
+
+
+**Update 06/22/2025 Version 2.1.0 Changelog:**
+- **Displaying flight plan on map if available (and next GPS waypoint if not)**
+- Running MSFS Glass is now possible without changing into its directory. (Including external launch scirpts like Stream Deck or MSFS EXE.xml)
+- Bumping SDK version to 1.4.2 (SU2)
+- Updating Python and JS dependencies
+- 8.33kHz COM direct input support
+- Fixing CORS issues with CDNs
+- Fixing B737Max's FMC, now it is using the Captain's FMC instead of the FO.
+
+
+
 **Update 03/16/2025 Version 2.0.0-beta Changelog:**
 - First binary release to the public
 - Adding multiple control profiles for aircraft commonly used in MSFS 2024 career mode
