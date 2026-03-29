@@ -37,7 +37,7 @@
                                inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?"
                                aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button onclick='if (document.getElementById("autopilot-heading-lock-dir").value <= 360 && document.getElementById("autopilot-heading-lock-dir").value >= 0 && document.getElementById("autopilot-heading-lock-dir").value != "") {triggerSimEventFromField ("HEADING_BUG_SET", "autopilot-heading-lock-dir");$("#autopilot-heading-lock-dir").val("");}; $(this).blur();'
+                            <button onclick='if (document.getElementById("autopilot-heading-lock-dir").value <= 360 && document.getElementById("autopilot-heading-lock-dir").value >= 0 && document.getElementById("autopilot-heading-lock-dir").value != "") {triggerSimEventFromField ("FCC_COURSE_1", "autopilot-heading-lock-dir", null, "input");$("#autopilot-heading-lock-dir").val("");}; $(this).blur();'
                                     class="btn btn-warning" type="button"
                                     style="margin-top:0px;margin-bottom:0px;width:62px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
                                     title="Set AP heading in degrees" id="AP_hdg_set">Set
@@ -81,7 +81,7 @@
                                inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?"
                                aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button onclick='if (document.getElementById("autopilot-altitude-lock-var").value <= 100000 && document.getElementById("autopilot-altitude-lock-var").value >= 0 && document.getElementById("autopilot-altitude-lock-var").value != "") {triggerSimEventFromField ("AP_ALT_VAR_SET_ENGLISH", "autopilot-altitude-lock-var");$("#autopilot-altitude-lock-var").val("");}; $(this).blur();'
+                            <button onclick='if (document.getElementById("autopilot-altitude-lock-var").value <= 100000 && document.getElementById("autopilot-altitude-lock-var").value >= 0 && document.getElementById("autopilot-altitude-lock-var").value != "") {triggerSimEventFromField ("FCC_ALTITUDE_SEL", "autopilot-altitude-lock-var", null, "input");$("#autopilot-altitude-lock-var").val("");}; $(this).blur();'
                                     class="btn btn-warning" type="button"
                                     style="margin-top:0px;margin-bottom:0px;width:62px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
                                     title="Set AP altitude in feet" id="AP_alt_set">Set
@@ -146,7 +146,7 @@
                                inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?"
                                aria-describedby="basic-addon2" style="padding-left:10px;padding-right:0px">
                         <div class="input-group-append">
-                            <button onclick='if (document.getElementById("autopilot-vertical-hold-var").value <= 10000 && document.getElementById("autopilot-vertical-hold-var").value >= -10000 && document.getElementById("autopilot-vertical-hold-var").value != "") {triggerSimEventFromField ("AP_VS_VAR_SET_ENGLISH", "autopilot-vertical-hold-var");$("#autopilot-vertical-hold-var").val("");}; $(this).blur();'
+                            <button onclick='if (document.getElementById("autopilot-vertical-hold-var").value <= 10000 && document.getElementById("autopilot-vertical-hold-var").value >= -10000 && document.getElementById("autopilot-vertical-hold-var").value != "") {triggerSimEventFromField ("FCC_VERTICAL_SPEED_SEL", "autopilot-vertical-hold-var", null, "input");$("#autopilot-vertical-hold-var").val("");}; $(this).blur();'
                                     class="btn btn-warning" type="button"
                                     style="margin-top:0px;margin-bottom:0px;width:50px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
                                     title="Set AP airspeed in knots" id="AP_vs_set">Set
@@ -185,7 +185,7 @@
                                inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?"
                                aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button onclick='if (document.getElementById("autopilot-airspeed-hold-var").value <= 3000 && document.getElementById("autopilot-airspeed-hold-var").value >= 0 && document.getElementById("autopilot-airspeed-hold-var").value != "") {triggerSimEventFromField ("AP_SPD_VAR_SET", "autopilot-airspeed-hold-var");$("#autopilot-airspeed-hold-var").val("");}; $(this).blur();'
+                            <button onclick='if (document.getElementById("autopilot-airspeed-hold-var").value <= 3000 && document.getElementById("autopilot-airspeed-hold-var").value >= 0 && document.getElementById("autopilot-airspeed-hold-var").value != "") {triggerSimEventFromField ("FCC_SPEED_SEL", "autopilot-airspeed-hold-var", null, "input");$("#autopilot-airspeed-hold-var").val("");}; $(this).blur();'
                                     class="btn btn-warning" type="button"
                                     style="margin-top:0px;margin-bottom:0px;width:62px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
                                     title="Set AP airspeed in knots" id="AP_spd_set">Set
