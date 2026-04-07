@@ -11,3 +11,4 @@ glass_server.spec
 templates/index.html.old
 templates/index_landscape.html.old
 glass_server.exe.spec
+config.ini
