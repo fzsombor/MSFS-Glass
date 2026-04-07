@@ -1,0 +1,160 @@
+				<!-- First Row-->
+				<div class="row" style="margin-top:-23px">
+					
+					<!-- Main AP Engage -->
+					<div class="col" style="margin-top:20px">
+						<div class="lead" style="margin-bottom:-15px">AP1</div>
+						<div class="row" style="margin-bottom:10px">
+						<div class="col">
+							<button onclick="triggerSimEvent('L:INI_AP1_BUTTON',1,true,'lvar');$(this).blur();" id="ap-1" type="button" class="btn mt-3 btn-block btn-danger btn-lg">?</button>
+							<hr class="bg-secondary" style="margin-bottom:5px">
+						</div>
+						</div>
+					</div>
+					<div class="col" style="margin-top:20px">
+						<div class="lead" style="margin-bottom:-15px">AP2 </div>
+						<div class="row" style="margin-bottom:10px">
+						<div class="col">
+							<button onclick="triggerSimEvent('L:INI_AP2_BUTTON',1,true,'lvar');$(this).blur();" id="ap-2" type="button" class="btn mt-3 btn-block btn-danger btn-lg">?</button>
+							<hr class="bg-secondary" style="margin-bottom:5px">
+						</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Second Row-->
+				<div class="row" style="margin-top:-23px">
+					<!-- AP Controls -->
+					<div class="col" style="margin-top:20px; margin-bottom:0px; max-width:400px; min-width:332px">
+						<div class="lead">AP Controls</div>
+						<div class="row" style="margin-bottom:10px">
+						<div class="col">
+							<p style="margin-top:16px;margin-bottom:4px">Airspeed (kts)</p>
+							<table>
+								<tr>
+									<td>
+									<div class="input-group sim-input-field" style="width:139px;margin-right:4px">
+										<input id="a320-airspeed-hold-var" type="number" onkeydown = "if (event.keyCode == 13) document.getElementById('a320_spd_set').click()" inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?" aria-describedby="basic-addon2">
+										<div class="input-group-append">
+											<button onclick='if (document.getElementById("a320-airspeed-hold-var").value <= 3000 && document.getElementById("a320-airspeed-hold-var").value >= 0 && document.getElementById("a320-airspeed-hold-var").value != "") {triggerSimEventFromField ("AP_SPD_VAR_SET", "a320-airspeed-hold-var", "Setting AP VS");triggerSimEvent ("SPEED_SLOT_INDEX_SET", 1, true);$("#a320-airspeed-hold-var").val("");}; $(this).blur();' class="btn btn-warning" type="button" style="margin-top:0px;margin-bottom:0px;width:67px;border-bottom-left-radius: 0; border-top-left-radius: 0;" title="Set AP airspeed in knots" id="a320_spd_set">Set</button>
+										</div>
+									</div>
+									</td>
+									<td>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('AP_SPD_VAR_DEC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:67px;padding-left:0px;padding-right:0px">-SPD</button>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('AP_SPD_VAR_INC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:67px;padding-left:0px;padding-right:0px">+SPD</button>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" onclick="triggerSimEvent ('SPEED_SLOT_INDEX_SET', 1, true); $(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Selected SPD</button>
+									</td>
+									<td>
+										<button type="button" onclick="triggerSimEvent ('SPEED_SLOT_INDEX_SET', 2, true); $(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Managed SPD</button>
+									</td>
+								</tr>
+							</table>
+							
+							<p style="margin-top:16px;margin-bottom:4px">Heading (deg)</p>
+							<table>
+								<tr>
+									<td>
+										<div class="input-group sim-input-field" style="width:139px;margin-right:4px">
+										<input id="a320-heading-lock-dir" type="number" onkeydown = "if (event.keyCode == 13) document.getElementById('a320_hdg_set').click()" inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?" aria-describedby="basic-addon2">
+										<div class="input-group-append">
+											<button onclick='if (document.getElementById("a320-heading-lock-dir").value <= 360 && document.getElementById("a320-heading-lock-dir").value >= 0 && document.getElementById("a320-heading-lock-dir").value != "") {triggerSimEventFromField ("HEADING_BUG_SET", "a320-heading-lock-dir", "Setting Heading Bug");triggerSimEvent ("HEADING_SLOT_INDEX_SET", 1, true);$("#a320-heading-lock-dir").val("");}; $(this).blur();' class="btn btn-warning" type="button" style="margin-top:0px;margin-bottom:0px;width:67px;border-bottom-left-radius: 0; border-top-left-radius: 0;" title="Set AP heading in degrees" id="a320_hdg_set">Set</button>
+										</div>
+										</div>
+									</td>
+									<td>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('HEADING_BUG_DEC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:67px;padding-left:0px;padding-right:0px">-HDG</button>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('HEADING_BUG_INC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:67px;padding-left:0px;padding-right:0px">+HDG</button>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" onclick="triggerSimEvent ('HEADING_SLOT_INDEX_SET', 1, true); $(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Selected HDG</button>
+									</td>
+									<td>
+										<button type="button" onclick="triggerSimEvent ('HEADING_SLOT_INDEX_SET', 2, true); $(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Managed HDG</button>
+									</td>
+								</tr>
+							</table>
+							
+							<p style="margin-top:16px;margin-bottom:4px">Altitude (fts)</p>
+							<table>
+								<tr>
+									<td>
+										<div class="input-group sim-input-field" style="width:139px;margin-right:4px">
+										<input id="a320-altitude-lock-var" type="number" onkeydown = "if (event.keyCode == 13) document.getElementById('a320_alt_set').click()" inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?" aria-describedby="basic-addon2">
+										<div class="input-group-append">
+												<button onclick='if (document.getElementById("a320-altitude-lock-var").value <= 100000 && document.getElementById("a320-altitude-lock-var").value >= 0 && document.getElementById("a320-altitude-lock-var").value != "") {triggerSimEventFromField ("AP_ALT_VAR_SET_ENGLISH", "a320-altitude-lock-var", "Setting AP ALT");triggerSimEvent ("FLIGHT_LEVEL_CHANGE_ON", 1, true);$("#a320-altitude-lock-var").val("");}; $(this).blur();' class="btn btn-warning" type="button" style="margin-top:0px;margin-bottom:0px;width:67px;border-bottom-left-radius: 0; border-top-left-radius: 0;" title="Set AP altitude in feet" id="a320_alt_set">Set</button>
+											</div>
+										</div>
+									</td>
+									<td>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('AP_ALT_VAR_DEC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:67px;padding-left:0px;padding-right:0px">-ALT</button>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('AP_ALT_VAR_INC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:67px;padding-left:0px;padding-right:0px">+ALT</button>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" onclick="triggerSimEvent ('ALTITUDE_SLOT_INDEX_SET', 1, true); $(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Selected ALT</button>
+									</td>
+									<td>
+										<button type="button" onclick="triggerSimEvent ('ALTITUDE_SLOT_INDEX_SET', 2, true); $(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Managed ALT</button>
+									</td>
+								</tr>
+							</table>
+							
+							<p style="margin-top:16px;margin-bottom:4px">Vertical Speed (fpm)</p>
+							<table>
+								<tr>
+									<td>
+										<div class="input-group sim-input-field" style="width:178px;margin-right:4px">
+										<div class="input-group-prepend">
+											<button onclick='document.getElementById("a320-vertical-hold-var").value = document.getElementById("a320-vertical-hold-var").value * (-1); $(this).blur();' class="btn btn-secondary" type="button" style="margin-top:0px;margin-bottom:0px;width:50px;border-bottom-right-radius: 0; border-top-right-radius: 0;" title="Set positive/negative value" id="AP_A320_vs_pos_neg">+/-</button>
+										</div>
+										<input id="a320-vertical-hold-var" type="number" onkeydown = "if (event.keyCode == 13) document.getElementById('a320_vs_set').click()" inputmode="numeric" pattern="[0-9]*" class="form-control" placeholder="?" aria-describedby="basic-addon2" style = "padding-left:10px;padding-right:0px">
+										<div class="input-group-append">
+											<button onclick='if (document.getElementById("a320-vertical-hold-var").value <= 10000 && document.getElementById("a320-vertical-hold-var").value >= -10000 && document.getElementById("a320-vertical-hold-var").value != "") {triggerSimEventFromField ("AP_VS_VAR_SET_ENGLISH", "a320-vertical-hold-var", "Setting AP VS");triggerSimEvent ("AP_PANEL_VS_ON", 1, true);$("#a320-vertical-hold-var").val("");}; $(this).blur();' class="btn btn-warning" type="button" style="margin-top:0px;margin-bottom:0px;width:50px;border-bottom-left-radius: 0; border-top-left-radius: 0;" title="Set AP airspeed in knots" id="a320_vs_set">Set</button>
+										</div>
+										</div>
+									</td>
+									<td>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('AP_VS_VAR_DEC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:47px;padding-left:0px;padding-right:0px">-VS</button>
+										<button type="button" onpointerdown="presshold(function(){ triggerSimEvent('AP_VS_VAR_INC',0,true) }, 400, 0.6, 90);" onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();" class="btn btn-secondary" style="width:47px;padding-left:0px;padding-right:0px">+VS</button>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<button type="button" onclick="triggerSimEvent ('AP_PANEL_VS_ON', 1, true);$(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Engage VS</button>
+										<button type="button" onclick="triggerSimEvent ('AP_VS_VAR_SET_ENGLISH', 0, true);triggerSimEvent ('AP_PANEL_VS_ON', 1, true);$(this).blur();" class="btn btn-secondary" style="width:139px;padding-left:0px;padding-right:0px">Level off</button>
+									</td>
+								</tr>
+							</table>
+							
+							<table style="vertical-align: middle;text-align: left;margin-top:24px">
+								<tr>
+									<td width="120">LOC Mode:</td>
+									<td width="70"><button onclick="triggerSimEvent('L:AP6_BUTTON',1,true,'lvar');$(this).blur();" id="a320-loc-ap" type="button" class="btn m-1 btn-danger" style="width: 55px">?</button></td>
+								</tr>
+								<tr>
+									<td width="120">Auto-throttle:</td>
+									<td width="70"><button onclick="triggerSimEvent('L:AP8_BUTTON',1,true,'lvar');$(this).blur();" id="a320-autothrottle" type="button" class="btn m-1 btn-danger" style="width: 55px">?</button></td>
+								</tr>
+								<tr>
+									<td width="120">EXPED Mode:</td>
+									<td width="70"><button onclick="triggerSimEvent('L:A320_FCU_EXPEDITE_COMMAND',1,true,'lvar');$(this).blur();" id="a320-exped-ap" type="button" class="btn m-1 btn-danger" style="width: 55px">?</button></td>
+								</tr>
+								<tr>
+									<td width="120">APPR Mode:</td>
+									<td width="70"><button onclick="triggerSimEvent('L:AP7_BUTTON',1,true,'lvar');$(this).blur();" id="a320-appr-ap" type="button" class="btn m-1 btn-danger" style="width: 55px">?</button></td>
+								</tr>
+							</table>
+
+						</div>
+						</div>
+					</div>
+					
+				</div>

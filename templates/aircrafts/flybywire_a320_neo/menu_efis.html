@@ -1,0 +1,112 @@
+<!-- EFIS Control Panel Header -->
+<div class="lead mb-3">EFIS Control Panel</div>
+
+<!-- Button Groups -->
+<div class="container-fluid">
+
+    <!-- First Button Row -->
+    <div class="row row-cols-3 row-cols-md-5 gy-2">
+        <div class="col">
+            <button onclick="triggerSimEvent('L:INI_EFIS_CPT_CSTR_BUTTON',1,true,'lvar');$(this).blur();"
+                    type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">CSTR
+            </button>
+        </div>
+        <div class="col">
+            <button onclick="triggerSimEvent('L:INI_EFIS_CPT_FIXES_BUTTON',1,true,'lvar');$(this).blur();"
+                    type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">WPT
+            </button>
+        </div>
+        <div class="col">
+            <button onclick="triggerSimEvent('L:INI_EFIS_CPT_VOR_BUTTON',1,true,'lvar');$(this).blur();"
+                    type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">VOR.D
+            </button>
+        </div>
+        <div class="col">
+            <button onclick="triggerSimEvent('L:INI_EFIS_CPT_NDB_BUTTON',1,true,'lvar');$(this).blur();"
+                    type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">NDB
+            </button>
+        </div>
+        <div class="col">
+            <button onclick="triggerSimEvent('L:INI_EFIS_CPT_ARPT_BUTTON',1,true,'lvar');$(this).blur();"
+                    type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">ARPT
+            </button>
+        </div>
+    </div>
+
+    <!-- Mode Selector -->
+    <div class="mt-4">
+        <p class="mb-2">Mode Selector</p>
+        <div class="row row-cols-3 row-cols-md-5 gy-2">
+            <div class="col">
+                <button onclick="triggerSimEvent('AIRLINER_ND_MAP_MODE_CPT',0,true,'input');$(this).blur();"
+                        type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">LS
+                </button>
+            </div>
+            <div class="col">
+                <button onclick="triggerSimEvent('AIRLINER_ND_MAP_MODE_CPT',1,true,'input');$(this).blur();"
+                        type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">VOR
+                </button>
+            </div>
+            <div class="col">
+                <button onclick="triggerSimEvent('AIRLINER_ND_MAP_MODE_CPT',2,true,'input');$(this).blur();"
+                        type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">NAV
+                </button>
+            </div>
+            <div class="col">
+                <button onclick="triggerSimEvent('AIRLINER_ND_MAP_MODE_CPT',3,true,'input');$(this).blur();"
+                        type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">ARC
+                </button>
+            </div>
+            <div class="col">
+                <button onclick="triggerSimEvent('AIRLINER_ND_MAP_MODE_CPT',4,true,'input');$(this).blur();"
+                        type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">PLAN
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Range Selector -->
+    <div class="mt-4">
+        <p class="mb-2">Range Selector</p>
+        <div class="row row-cols-3 row-cols-md-6 gy-2">
+            {% for range in [10, 20, 40, 80, 160, 320] %}
+                <div class="col">
+                    <button onclick="triggerSimEvent('AIRLINER_ND_MAP_RANGE_CPT',{{ loop.index0 }},true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary w-100">{{ range }}</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Other Controls -->
+    <div class="mt-4">
+        <p class="mb-2">VOR/ADF Selectors</p>
+        <table class="text-white">
+            <tr>
+                <td>VOR/ADF 1:</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <button onclick="triggerSimEvent('AIRLINER_ND_VOR_1_CPT',0,true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary btn-sm">ADF</button>
+                    <button onclick="triggerSimEvent('AIRLINER_ND_VOR_1_CPT',1,true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-danger btn-sm">OFF</button>
+                    <button onclick="triggerSimEvent('AIRLINER_ND_VOR_1_CPT',2,true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary btn-sm">VOR</button>
+                </td>
+            </tr>
+            <tr>
+                <td>VOR/ADF 2:</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <button onclick="triggerSimEvent('AIRLINER_ND_VOR_2_CPT',0,true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary btn-sm">ADF</button>
+                    <button onclick="triggerSimEvent('AIRLINER_ND_VOR_2_CPT',1,true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-danger btn-sm">OFF</button>
+                    <button onclick="triggerSimEvent('AIRLINER_ND_VOR_2_CPT',2,true,'input');$(this).blur();"
+                            type="button" style="--bs-btn-padding-x: 0"  class="btn btn-secondary btn-sm">VOR</button>
+                </td>
+            </tr>
+            <!-- Add similar rows for other controls -->
+        </table>
+    </div>
+</div>

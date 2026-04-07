@@ -1,0 +1,67 @@
+
+				<!-- First Row-->
+				<div class="row" style="margin-top:-23px">
+
+					<!-- Lights -->
+					<div class="col" style="margin-top:20px; max-width:270px; min-width:270px;">
+						<div class="lead">Lights</div>
+						<div class="row" style="margin-bottom:10px">
+						<div class="col">
+							<button onclick="triggerSimEvent('ALL_LIGHTS_TOGGLE',0,true);$(this).blur();" id="light-all" type="button" class="btn btn-warning" style="width:245px">Toggle All Lights</button><br>
+							<table style="width:245px">
+								<tr>
+									<td width="190">Strobe Lights</td>
+									<td><button onclick="triggerSimEvent('STROBES_TOGGLE',0,true);$(this).blur();" id="a320-light-strobe" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>Beacon Lights</td>
+									<td><button onclick="triggerSimEvent('TOGGLE_BEACON_LIGHTS',0,true);$(this).blur();" id="light-beacon" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>Wing Lights</td>
+									<td><button onclick="triggerSimEvent('TOGGLE_WING_LIGHTS',0,true);$(this).blur();" id="light-wings" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>NAV/Logo Lights</td>
+									<td><button onclick="triggerSimEvent('TOGGLE_NAV_LIGHTS',0,true);$(this).blur();" id="a320-light-nav" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>RWY Lights</td>
+									<td><button onclick="triggerSimEvent('INSTRUMENT_LT_RWYTURN_IE_ID',INSTRUMENT_LT_RWYTURN_IE_ID === 0 ? 1 : 0,true, 'input');$(this).blur();" id="light-rwy" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>Landing Lights</td>
+									<td><button onclick="triggerSimEvent('LANDING_LIGHTS_TOGGLE',0,true);$(this).blur();" id="light-landing" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+                                <tr>
+									<td>Nose Lights</td>
+									<td><button onclick="triggerSimEvent('TOGGLE_TAXI_LIGHTS',0,true);$(this).blur();" id="a320-light-taxi" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>Cabin Lights</td>
+									<td><button onclick="triggerSimEvent('TOGGLE_CABIN_LIGHTS',0,true);$(this).blur();" id="light-cabin" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+								<tr>
+									<td>Panel Lights</td>
+									<td><button onclick="triggerSimEvent('PANEL_LIGHTS_TOGGLE',0,true);$(this).blur();" id="light-panel" type="button" class="btn btn-danger" style="width:55px">?</button></td>
+								</tr>
+							</table>
+						</div>
+						</div>
+					</div>
+
+					<!-- Pitot & Deicing -->
+					<div class="col" style="margin-top:20px; max-width:300px; min-width:290px;">
+						<div class="lead">Anti Ice</div>
+						<div class="row" style="margin-bottom:10px">
+							<div class="col">
+								<button id='a320-ice-wing' onclick="triggerSimEvent('L:INI_WING_ANTI_ICE',AIRLINER_ICE_WING === 0 ? 1 : 0,true,'lvar');$(this).blur();" type="button" class="btn btn-secondary" style="width:245px;padding-left:0px;padding-right:0px;text-align:center">Wing Anti Ice</button><br>
+								<button id='a320-ice-eng1' onclick="triggerSimEvent('L:INI_ENG1_ANTI_ICE', AIRLINER_ICE_ENG1 === 0 ? 1 : 0,true,'lvar');$(this).blur();" type="button" class="btn btn-secondary" style="width:245px;padding-left:0px;padding-right:0px;text-align:center">ENG1 Anti Ice</button><br>
+								<button id='a320-ice-eng2' onclick="triggerSimEvent('L:INI_ENG2_ANTI_ICE', AIRLINER_ICE_ENG2 === 0 ? 1 : 0,true,'lvar');$(this).blur();" type="button" class="btn btn-secondary" style="width:245px;padding-left:0px;padding-right:0px;text-align:center">ENG2 Anti Ice</button><br>
+								<button id='a320-probe-heat' onclick="triggerSimEvent('L:INI_PROBE_HEAT', AIRLINER_PROBE_HEAT === 0 ? 1 : 0,true,'lvar');$(this).blur();" type="button" class="btn btn-secondary" style="width:245px;padding-left:0px;padding-right:0px;text-align:center">Probe/Window Heat</button><br>
+								<button id='a320-cpt-wiper' onclick="triggerSimEvent('AIRLINER_WIPER_CPT', AIRLINER_WIPER_CPT === 0 ? 1 : AIRLINER_WIPER_CPT === 1 ? 2 : 0,true,'input');$(this).blur();" type="button" class="btn btn-secondary" style="width:245px;padding-left:0px;padding-right:0px;text-align:center">Pilot Wiper</button><br>
+							</div>
+						</div>
+					</div>
+
+				</div>

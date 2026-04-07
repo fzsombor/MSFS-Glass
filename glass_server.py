@@ -91,6 +91,7 @@ dir_aircraft = {
     "gotfriends_patey_aviation_dracox": "DracoX",
     "asobo_vl3": "JMB VL-3",
     "microsoft-pc12-ngx": "Pilatus PC-12",
+    "flybywire_a320_neo": "FBW Airbus A320neo",
 }
 
 
@@ -162,6 +163,9 @@ def flask_thread_func(threadname):
         "blackbirdsims_dhc2": [["NAV", "nav"], ["COM", "com"],
                                ["AP", "ap"], ["GNS530", "gns530"], ["GNS430", "gns430"], ["Panel", "panel"],
                                ["Other", "other"]],
+        "flybywire_a320_neo": [["FCU", "ap"], ["EFIS", "efis"], ["NAV", "nav"], ["COM", "com"], ["MCDU", "mcdu"],
+                              ["Panel", "panel"],
+                              ["Other", "other"]],
     }
 
     selected_aircraft = "default"

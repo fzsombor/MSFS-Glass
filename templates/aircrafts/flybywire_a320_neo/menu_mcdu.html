@@ -1,0 +1,385 @@
+<!-- MCDU Panel Header -->
+<div class="lead mb-3">MCDU Panel</div>
+
+<!-- Other Controls -->
+{#<div class="mt-4">#}
+{#    <table class="fixed">#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">DIR</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">PROG</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">PERF</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">INIT</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">DATA</button>#}
+{#            </td>#}
+{#            <td colspan="1"></td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">BRT</button>#}
+{#            </td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">F-PLN</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">RAD NAV</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">FUEL PRED</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">SEC F-PLN</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">ATC COMM</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">MCDU MENU</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">DIM</button>#}
+{#            </td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">AIRPORT</button>#}
+{#            </td>#}
+{#            <td colspan="7"></td>#}
+{##}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">LEFT</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">UP</button>#}
+{#            </td>#}
+{#            <td colspan="1"></td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">A</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">B</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">C</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">D</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">E</button>#}
+{#            </td>#}
+{##}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">RIGHT</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">DOWN</button>#}
+{#            </td>#}
+{#            <td colspan="1"></td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">F</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">G</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">H</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">I</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">J</button>#}
+{#            </td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">1</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">2</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">3</button>#}
+{#            </td>#}
+{##}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">K</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">L</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">M</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">N</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">O</button>#}
+{#            </td>#}
+{##}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">4</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">5</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">6</button>#}
+{#            </td>#}
+{##}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">P</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">Q</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">R</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">S</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">T</button>#}
+{#            </td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">7</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">8</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">9</button>#}
+{#            </td>#}
+{##}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">U</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">V</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">W</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">X</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">Y</button>#}
+{#            </td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">.</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">0</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100" style="border-radius: 99px;">+/-</button>#}
+{#            </td>#}
+{##}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">Z</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">/</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">SP</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">OVFY</button>#}
+{#            </td>#}
+{#            <td>#}
+{#                <button type="button" class="btn btn-secondary w-100">CLR</button>#}
+{#            </td>#}
+{#            <td colspan="1"></td>#}
+{#        </tr>#}
+{#    </table>#}
+{#</div>#}
+
+<div class="mcdu-container">
+    <!-- MCDU function buttons -->
+    <div class="section mcdu-side-buttons">
+        <button onclick="triggerSimEvent('L:A32NX_MCDU_PUSH_ANIM_1_L1',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button> -
+        <button onclick="triggerSimEvent('L:INI_MCDU1_LSK2L',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button> -
+        <button onclick="triggerSimEvent('L:INI_MCDU1_LSK3L',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button> -
+        <button onclick="triggerSimEvent('L:INI_MCDU1_LSK4L',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button> -
+        <button onclick="triggerSimEvent('L:INI_MCDU1_LSK5L',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button> -
+        <button onclick="triggerSimEvent('L:INI_MCDU1_LSK6L',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button> -
+    </div>
+
+    <div class="section mcdu-side-buttons">
+        - <button onclick="triggerSimEvent('L:INI_MCDU1_LSK1R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button>
+        - <button onclick="triggerSimEvent('L:INI_MCDU1_LSK2R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button>
+        - <button onclick="triggerSimEvent('L:INI_MCDU1_LSK3R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button>
+        - <button onclick="triggerSimEvent('L:INI_MCDU1_LSK4R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button>
+        - <button onclick="triggerSimEvent('L:INI_MCDU1_LSK5R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button>
+        - <button onclick="triggerSimEvent('L:INI_MCDU1_LSK6R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">------</button>
+    </div>
+
+
+    <div class="section mcdu-buttons">
+        <button onclick="triggerSimEvent('L:INI_MCDU1_DIR',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">DIR</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_PROG',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">PROG</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_PERF',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">PERF</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_INIT',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">INIT</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_DATA',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">DATA</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_FPLAN',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">F-PLN</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_RADNAV',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">RAD NAV</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_FUEL',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">FUEL PRED</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_SEC',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">SEC F-PLN</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_ATC',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">ATC COMM</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_MENU',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">MCDU MENU</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_BRT_SWITCH',0,true,'lvar');$(this).blur();" class="btn btn-secondary button">BRT</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_BRT_SWITCH',2,true,'lvar');$(this).blur();" class="btn btn-secondary button">DIM</button>
+    </div>
+
+    <div class="section mcdu-buttons">
+        <button onclick="triggerSimEvent('L:INI_MCDU1_AIRPORT',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">AIRPORT</button>
+        <button class="btn btn-secondary button" disabled></button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_PREV',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">LEFT</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_UARROW',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">UP</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_NEXT',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">RIGHT</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_DOWN',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">DOWN</button>
+    </div>
+
+    <!-- Numbers -->
+    <div class="section numbers">
+        <button onclick="triggerSimEvent('L:INI_MCDU1_1',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">1</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_2',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">2</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_3',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">3</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_4',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">4</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_5',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">5</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_6',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">6</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_7',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">7</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_8',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">8</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_9',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">9</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_DECIMAL',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">.</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_0',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">0</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_PLUS',1,true,'lvar');$(this).blur();" class="btn btn-secondary button rounded-btn">+/-</button>
+    </div>
+
+    <!-- Letters -->
+    <div class="section letters">
+        <button onclick="triggerSimEvent('L:INI_MCDU1_A',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">A</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_B',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">B</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_C',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">C</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_D',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">D</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_E',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">E</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_F',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">F</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_G',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">G</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_H',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">H</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_I',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">I</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_J',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">J</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_K',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">K</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_L',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">L</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_M',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">M</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_N',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">N</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_O',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">O</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_P',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">P</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_Q',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">Q</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_R',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">R</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_S',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">S</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_T',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">T</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_U',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">U</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_V',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">V</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_W',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">W</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_X',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">X</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_Y',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">Y</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_Z',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">Z</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_SLASH',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">/</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_SPACE',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">SP</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_OVERFLY',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">OVFY</button>
+        <button onclick="triggerSimEvent('L:INI_MCDU1_CLR',1,true,'lvar');$(this).blur();" class="btn btn-secondary button">CLR</button>
+    </div>
+</div>
+
+<style>
+    table.fixed {
+        table-layout: fixed;
+        width: 720px;
+    }
+
+    /*Setting the table width is important!*/
+    table.fixed td {
+        overflow: hidden;
+        width: 80px;
+    }
+
+    .mcdu-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: auto;
+    }
+
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .button {
+        width: 60px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .mcdu-buttons button {
+        font-size: 12px;
+    }
+
+
+    .rounded-btn {
+        border-radius: 99px;
+    }
+
+    .mcdu-buttons {
+        max-width: 350px;
+        max-height: 150px;
+    }
+
+    .mcdu-side-buttons {
+        max-width: 80px;
+    }
+
+    .numbers {
+        max-width: 200px;
+        max-height: 190px;
+    }
+
+    .letters {
+        max-width: 350px;
+    }
+
+    /* Make numbers and letters wrap under each other on smaller screens */
+    @media (max-width: 600px) {
+        .letters, .numbers {
+            flex: 1 1 100%;
+            justify-content: center;
+        }
+    }
+
+</style>

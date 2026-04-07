@@ -1,0 +1,454 @@
+<!-- COM-->
+
+<!-- Switch Frequency Swap / Direct -->
+<div class="row">
+    <div class="col" style="max-width:134px">
+        <table>
+            <tr>
+                <td><span class="badge text-bg-secondary">Active-Standby Swap</span></td>
+                <td>
+                    <form>
+                        <div class="form-check form-switch" style="margin-top:3px;margin-right:-7px">
+                            <input type="checkbox" class="form-check-input" id="COMtypeswitch"
+                                   onclick="$('#swapCOM, #directCOM').toggle();">
+                            <label class="form-check-label" for="COMtypeswitch"></label>
+                        </div>
+                    </form>
+                </td>
+                <td><span class="badge text-bg-secondary">Direct Input</span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- COM Frequency Swap -->
+<div id="swapCOM">
+    <div class="row" style="margin-top:-10px">
+
+        <!-- COM 1 -->
+        <div class="col" style="margin-top:20px; max-width:332px; min-width:332px;">
+            <div class="lead">COM 1</div>
+            <!-- COM 1 Frequency Swap Row-->
+            <div class="row" style="margin-bottom:10px">
+                <div class="col">
+                    <div class="btn-group" role="group" aria-label="COM1 USE">
+                        <button type="button" class="btn btn-light"
+                                style="width:50px;padding-left:0px;padding-right:0px" disabled>USE
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                style="background-color:#000000;width:80px;opacity:1;padding:0px" disabled><strong><span
+                                style="color:red" id="com1_active">?</span></strong></button>
+                    </div>
+                    <button onclick="triggerSimEvent ('COM_STBY_RADIO_SWAP', 0, true); $(this).blur(); com1switch();"
+                            type="button" class="btn btn-secondary" title="Swap COM1 Standby frequency"
+                            style="width:35px;height:37px;padding:0px;padding-bottom:1px">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <div class="btn-group" role="group" aria-label="COM1 STBY">
+                        <button type="button" class="btn btn-light"
+                                style="width:50px;padding-left:0px;padding-right:0px" disabled>STBY
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                style="background-color:#000000;width:80px;opacity:1;padding:0px" disabled><strong><span
+                                style="color:red" id="com1_standby">?</span></strong></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COM 1 Tuner Row-->
+            <div class="row align-items-center" style="margin-bottom:10px;margin-top:5px">
+                <div class="col-auto" style="padding-right:5px">
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM_RADIO_WHOLE_DEC',1,true) },function(){ com1minus1() }, 400, 0.6, 150);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Decrease COM1 frequency by 1 MHz"
+                            style="width:45px;">
+                        <i class="bi bi-caret-left-fill"></i>
+                    </button>
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM_RADIO_FRACT_DEC',1,true) },function(){ com1minus005() }, 400, 0.6, 90);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Decrease COM1 frequency by 25 kHz"
+                            style="width:45px">
+                        <i class="bi bi-caret-left"></i>
+                    </button>
+                </div>
+                <div class="col" style="padding-left:0px;padding-right:0px;margin">
+                    <button type="button" class="btn btn-light btn-sm" style="width:100%" disabled>Tune COM 1</button>
+                </div>
+                <div class="col-auto" style="padding-left:5px">
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM_RADIO_FRACT_INC',1,true) },function(){ com1plus005() }, 400, 0.6, 90);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Increase COM1 frequency by 25 kHz"
+                            style="width:45px">
+                        <i class="bi bi-caret-right"></i>
+                    </button>
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM_RADIO_WHOLE_INC',1,true) },function(){ com1plus1() }, 400, 0.6, 150);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Increase COM1 frequency by 1 MHz"
+                            style="width:45px">
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- COM 2 -->
+        <div class="col" style="margin-top:20px; max-width:332px; min-width:332px;">
+            <div class="lead">COM 2</div>
+
+            <!-- COM 2 Frequency Swap Row-->
+            <div class="row" style="margin-bottom:10px">
+                <div class="col">
+                    <div class="btn-group" role="group" aria-label="COM2 USE">
+                        <button type="button" class="btn btn-light"
+                                style="width:50px;padding-left:0px;padding-right:0px" disabled>USE
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                style="background-color:#000000;width:80px;opacity:1;padding:0px" disabled><strong><span
+                                style="color:red" id="com2_active">?</span></strong></button>
+                    </div>
+                    <button onclick="triggerSimEvent ('COM2_RADIO_SWAP', 0, true); $(this).blur(); com2switch();"
+                            type="button" class="btn btn-secondary" title="Swap COM2 Standby frequency"
+                            style="width:35px;height:37px;padding:0px;padding-bottom:1px">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <div class="btn-group" role="group" aria-label="COM2 STBY">
+                        <button type="button" class="btn btn-light"
+                                style="width:50px;padding-left:0px;padding-right:0px" disabled>STBY
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                style="background-color:#000000;width:80px;opacity:1;padding:0px" disabled><strong><span
+                                style="color:red" id="com2_standby">?</span></strong></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COM 2 Tuner Row-->
+            <div class="row align-items-center" style="margin-bottom:10px;margin-top:5px">
+                <div class="col-auto" style="padding-right:5px">
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM2_RADIO_WHOLE_DEC',1,true) },function(){ com2minus1() }, 400, 0.6, 150);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Decrease COM2 frequency by 1 MHz"
+                            style="width:45px;">
+                        <i class="bi bi-caret-left-fill"></i>
+                    </button>
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM2_RADIO_FRACT_DEC',1,true) },function(){ com2minus005() }, 400, 0.6, 90);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Decrease COM2 frequency by 25 kHz"
+                            style="width:45px">
+                        <i class="bi bi-caret-left"></i>
+                    </button>
+                </div>
+                <div class="col" style="padding-left:0px;padding-right:0px;margin">
+                    <button type="button" class="btn btn-light btn-sm" style="width:100%" disabled>Tune COM 2</button>
+                </div>
+                <div class="col-auto" style="padding-left:5px">
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM2_RADIO_FRACT_INC',1,true) },function(){ com2plus005() }, 400, 0.6, 90);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Increase COM2 frequency by 25 kHz"
+                            style="width:45px">
+                        <i class="bi bi-caret-right"></i>
+                    </button>
+                    <button onpointerdown="presshold2(function(){ triggerSimEvent('COM2_RADIO_WHOLE_INC',1,true) },function(){ com2plus1() }, 400, 0.6, 150);"
+                            onpointerup="releasehold();$(this).blur();" onpointerout="releasehold();$(this).blur();"
+                            type="button" class="btn btn-secondary" title="Increase COM2 frequency by 1 MHz"
+                            style="width:45px">
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COM Transmissions -->
+        <div class="col" style="margin-top:20px; max-width:332px; min-width:332px;">
+            <div class="lead">COM Transmit Toggle</div>
+            <div class="row align-items-center" style="margin-bottom:10px">
+                <div class="col">
+                    <button type="button" onclick="triggerSimEvent ('COM1_TRANSMIT_SELECT', 0, true); $(this).blur();"
+                            class="btn btn-danger" id="com1-transmit" title="Selects COM 1 to transmit"
+                            style="width:120px">COM 1
+                    </button>
+                    <button type="button" onclick="triggerSimEvent ('COM2_TRANSMIT_SELECT', 0, true); $(this).blur();"
+                            class="btn btn-danger" id="com2-transmit" title="Selects COM 2 to transmit"
+                            style="width:120px">COM 2
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- XPNDR -->
+        <div class="col" style="margin-top:20px; max-width:332px; min-width:332px;">
+            <div class="lead">XPNDR</div>
+
+            <div class="row align-items-center" style="margin-bottom:10px">
+                <div class="col" style="min-width:208px;max-width:208px;">
+                    <div class="row">
+                        <!-- XPNDR Standby Tuner-->
+                        <div class="col" style="margin-left:15px">
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_1000_INC', 1, true); $(this).blur(); xpndrplus1000();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Increase XPNDR first digit" style="width:45px;">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-secondary"
+                                        style="background-color:#000000;width:45px;opacity:1;padding-left:0px;padding-right:0px;"
+                                        disabled><strong><span style="color:red" id="xpndr_1000">?</span></strong>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_1000_DEC', 1, true); $(this).blur(); xpndrminus1000();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Decrease XPNDR first digit" style="width:45px;">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col" style="margin-left:4px">
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_100_INC', 1, true); $(this).blur(); xpndrplus100();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Increase XPNDR second digit" style="width:45px;">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-secondary"
+                                        style="background-color:#000000;width:45px;opacity:1;padding-left:0px;padding-right:0px;"
+                                        disabled><strong><span style="color:red" id="xpndr_100">?</span></strong>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_100_DEC', 1, true); $(this).blur(); xpndrminus100();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Decrease XPNDR second digit" style="width:45px;">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col" style="margin-left:4px">
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_10_INC', 1, true); $(this).blur(); xpndrplus10();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Increase XPNDR third digit" style="width:45px;">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-secondary"
+                                        style="background-color:#000000;width:45px;opacity:1;padding-left:0px;padding-right:0px;"
+                                        disabled><strong><span style="color:red" id="xpndr_10">?</span></strong>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_10_DEC', 1, true); $(this).blur(); xpndrminus10();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Decrease XPNDR third digit" style="width:45px;">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col" style="margin-left:4px">
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_1_INC', 1, true); $(this).blur(); xpndrplus1();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Increase XPNDR last digit" style="width:45px;">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-secondary"
+                                        style="background-color:#000000;width:45px;opacity:1;padding-left:0px;padding-right:0px;"
+                                        disabled><strong><span style="color:red" id="xpndr_1">?</span></strong></button>
+                            </div>
+                            <div class="row">
+                                <button onclick="triggerSimEvent ('XPNDR_1_DEC', 1, true); $(this).blur(); xpndrminus1();"
+                                        id="autopilot-com-freq" type="button" class="btn btn-secondary"
+                                        title="Decrease XPNDR last digit" style="width:45px;">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Last Row Force Sync Frequencies -->
+    <div class="row" style="margin-top:15px">
+        <div class="col">
+            <button class="btn btn-danger btn-sm" type="button" onclick="syncRadio();$(this).blur();">Force Sync
+                Frequencies
+            </button>
+            <p class="font-italic text-secondary">Press "Force Sync Frequencies" if radio frequencies are out of sync
+                with MSFS. Allow up to 3 seconds to sync frequencies.</p>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:15px">
+        <div class="col">
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_1',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 1</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_2',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 2</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_3',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 3</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_4',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 4</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_5',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 5</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_6',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 6</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_7',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 7</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_8',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 8</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_9',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 9</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_10',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 10</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="triggerSimEvent('ATC_MENU_11',0,true);$(this).blur();" class="btn btn-success btn-sm" style="width:106px;margin-top:0px">ATC Menu 11</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Direct Entry COM-->
+<div id="directCOM">
+    <!-- First Row-->
+    <div class="row" style="margin-top:-10px">
+
+        <!-- COM 1 350i-->
+        <div class="col" style="margin-top:20px; max-width:382px; min-width:320px;">
+            <div class="lead">COM 1 Active</div>
+
+            <!-- COM 1 Freq Set 350i-->
+            <div class="row" style="margin-bottom:10px; margin-top:10px">
+                <div class="col">
+                    <div class="input-group" style="width:278px">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-body" id="inputGroup-sizing-default"
+                                  style="background-color:#B3B6B8; border-color:#B3B6B8; width:150px; ">COM 1 Freq (MHz)</span>
+                        </div>
+                        <input lang="en-US" class="form-control" type="number"
+                               onkeydown="if (event.keyCode == 13) document.getElementById('COM1_Set').click()"
+                               inputmode="decimal" pattern="[0-9]*" id="COM1_freq" aria-label="COM 1 Freq"
+                               aria-describedby="COM1_freq" style="padding-left:7px;padding-right:7px" placeholder="-">
+                        <div class="input-group-append">
+                            <button onclick='document.getElementById("COM1_freq").value = document.getElementById("COM1_freq").value. replace(",", "."); if (document.getElementById("COM1_freq").value <= 136.995 && document.getElementById("COM1_freq").value >= 118 && document.getElementById("COM1_freq").value != "") {triggerSimEventFromField ("COM_RADIO_SET", "COM1_freq", "Setting COM1");$("#COM1_freq").val("");}; $(this).blur();sleep(3000).then(() => { syncRadio(); });'
+                                    class="btn btn-warning" type="button" id="COM1_Set"
+                                    style="margin-top:0px;margin-bottom:0px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
+                                    title="Set COM 1 frequency in MHz">Set
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COM 1 Transmit 350i-->
+            <div class="row" style="margin-bottom:10px; margin-top:10px">
+                <div class="col">
+                    <button type="button" onclick="triggerSimEvent ('COM1_TRANSMIT_SELECT', 0, true); $(this).blur();"
+                            class="btn btn-danger btn-sm" style="width:220px" id="com1-transmit-direct"
+                            title="Selects COM 1 to transmit">Transmit COM 1
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COM 2 350i-->
+        <div class="col" style="margin-top:20px; max-width:382px; min-width:320px;">
+            <div class="lead">COM 2 Active</div>
+
+            <!-- COM 2 Freq Set 350i-->
+            <div class="row" style="margin-bottom:10px; margin-top:10px">
+                <div class="col">
+                    <div class="input-group" style="width:278px">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-body" id="inputGroup-sizing-default"
+                                  style="background-color:#B3B6B8; border-color:#B3B6B8; width:150px">COM 2 Freq (MHz)</span>
+                        </div>
+                        <input lang="en-US" class="form-control" type="number"
+                               onkeydown="if (event.keyCode == 13) document.getElementById('COM2_Set').click()"
+                               inputmode="decimal" pattern="[0-9]*" id="COM2_freq" aria-label="COM 2 Freq"
+                               aria-describedby="COM2_freq" style="padding-left:7px;padding-right:7px" placeholder="-">
+                        <div class="input-group-append">
+                            <button onclick='document.getElementById("COM2_freq").value = document.getElementById("COM2_freq").value. replace(",", "."); if (document.getElementById("COM2_freq").value <= 136.995 && document.getElementById("COM2_freq").value >= 118 && document.getElementById("COM2_freq").value != "") {triggerSimEventFromField ("COM2_RADIO_SET", "COM2_freq", "Setting COM2");$("#COM2_freq").val("");}; $(this).blur();sleep(3000).then(() => { syncRadio(); });'
+                                    class="btn btn-warning" type="button" id="COM2_Set"
+                                    style="margin-top:0px;margin-bottom:0px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
+                                    title="Set COM 2 frequency in MHz">Set
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COM 2 Transmit 350i -->
+            <div class="row" style="margin-bottom:10px; margin-top:10px">
+                <div class="col">
+                    <button type="button" onclick="triggerSimEvent ('COM2_TRANSMIT_SELECT', 0, true); $(this).blur();"
+                            class="btn btn-danger btn-sm" style="width:220px" id="com2-transmit-direct"
+                            title="Selects COM 2 to transmit">Transmit COM 2
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- XPNDR 350i-->
+        <div class="col" style="margin-top:20px; max-width:382px; min-width:320px;">
+            <div class="lead">XPNDR Active</div>
+
+            <!-- XPNDR Freq Set 350i-->
+            <div class="row" style="margin-bottom:10px; margin-top:10px">
+                <div class="col">
+                    <div class="input-group" style="width:278px">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-body" id="inputGroup-sizing-default"
+                                  style="background-color:#B3B6B8; border-color:#B3B6B8; width:150px">XPNDR Freq (kHz)</span>
+                        </div>
+                        <input class="form-control" type="number"
+                               onkeydown="if (event.keyCode == 13) document.getElementById('XPNDR_Freq_Set').click()"
+                               inputmode="numeric" pattern="[0-9]*" id="XPNDR_g3000" aria-label="XPNDR Freq"
+                               aria-describedby="XPNDR_g3000" placeholder="-">
+                        <div class="input-group-append">
+                            <button onclick='if (document.getElementById("XPNDR_g3000").value <= 7777 && document.getElementById("XPNDR_g3000").value >= 0 && document.getElementById("XPNDR_g3000").value != "") {triggerSimEventFromField ("XPNDR_SET", "XPNDR_g3000", "Setting XPNDR"); $("#XPNDR_g3000").val("");}; $(this).blur();sleep(3000).then(() => { syncRadio(); });'
+                                    class="btn btn-warning" type="button" id="XPNDR_Freq_Set"
+                                    style="margin-top:0px;margin-bottom:0px;border-bottom-left-radius: 0; border-top-left-radius: 0;"
+                                    title="Set XPNDR frequency in kHz">Set
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- End of COMs-->
